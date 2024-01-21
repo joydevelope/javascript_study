@@ -1,0 +1,127 @@
+/*노말라이즈*/
+body,ul,li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+a{
+  color:inherit;
+  text-decoration:none;
+}
+/*노말라이즈 끝*/
+
+/*라이브러리 시작*/
+.con{
+  margin-left:auto;
+  margin-right:auto;
+}
+/*라이브러리 끝*/
+/*커스텀 시작*/
+:root{
+  --site-width:1200px;
+}
+.con-min-width{
+  min-width:calc(var(--site-width));
+}
+.con{
+  width:calc(var(--site-width));
+}
+
+/*my-slider-box-1 시작*/
+.my-slider-box-1 {
+  margin:10px;
+  border:10px solid red;
+  position:relative;
+}
+.my-slider-box-1__nav {
+  display:flex;
+  justify-content:center;
+}
+.my-slider-box-1 .my-slider-box-1__btn-left,
+.my-slider-box-1 .my-slider-box-1__btn-right {
+  border:1px solid black;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1rem;
+  outline:0;
+  cursor:pointer;
+  position:absolute;
+  right:calc(100% + 50px);
+  top:50%;
+  transform: translateY(-50%);
+}
+.my-slider-box-1 .my-slider-box-1__btn-right {
+  right:auto;
+  left:calc(100% + 50px);
+}
+
+.my-slider-box-1 .swiper-slide > img{
+  width:100%;
+  display:block;
+  transform:scale(1.2);
+  transition:transform 10s;
+}
+.swiper-slide.swiper-slide-active > img{
+  transform:scale(1);
+}
+.my-slider-box-1 .swuper-slide{
+  overflow:hidden;
+}
+.my-slider-box-1 .swiper-pagination{
+  background-color:gold;
+  position:static;
+  display:flex;
+  justify-content:center;
+}
+.my-slider-box-1 .my-slider-box-1__btn-left.swiper-button-disabled,
+.my-slider-box-1 .my-slider-box-1__btn-right.swiper-button-disabled {
+  opacity:0.3;
+}
+.my-slider-box-1 .swiper-pagination-bullet{
+  border-radius:initial;
+  width:initial;
+  height:initial;
+  background:initial;
+  opacity:initial;
+  opacity:0.5;
+  outline:0;
+  border-radius:50%;
+  overflow:hidden;
+  margin:0 5px;
+}
+.my-slider-box-1 .swiper-pagination-bullet >img{
+  display:block;
+}
+.my-slider-box-1 .swiper-pagination-bullet-active
+{opacity:1;
+}
+
+.my-slider-box-1__prod-name{
+  position:absolute;
+  top:0;
+  left:0;
+  padding:10px;
+  background-color: red;
+  color:white;
+  font-weight:bold;
+  z-index:10;
+  transform:translatey(-100%);
+  transition:transform 1s;
+}
+.swiper-slide-active .my-slider-box-1__prod-name{
+  transform:translatey(0);
+}
+.swiper-pagination-bullet-active{}
+/*my-slider-box-1 끝*/
+
+/*my-slider-box-2 시작*/
+.my-slider-box-2 {
+  margin:10px;
+  border:10px solid blue;
+}
+/*my-slider-box-2 끝*/
+/*커스텀 끝*/

@@ -1,0 +1,53 @@
+body, ul, li{
+  margin:0;
+  paddin:0;
+  list-style:none;
+}
+
+*{
+  /*cursor:none; 기존 커서 없애기*/
+}
+
+.body-content{
+  background-color:white; /*mix-blend-mode 사용시 꼭 넣기*/
+  min-height:100vh; /*전체화면에서 커서 효과 보이게 하려면 넣기*/
+}
+.cursor{
+  position:fixed;
+  top:-300px; /*초기에 커서가 안보이도록 처리*/
+  left:-300px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background-color: white;/*배경이 흰색이므로 흰색이여야 반전이 된다*/
+  mix-blend-mode:difference;
+  transform:translateX(-50%) translateY(-50%);
+  transition:width .1s, height .1s;
+  pointer-events:none; /*클릭할 수 없는 상태가 됨*/
+  z-index:100;
+}
+
+.cursor-shadow{
+  position:fixed;
+  width:20px;
+  height:20px;
+  top:-300px;
+  left:-300px;
+  border-radius:50%;
+  background-color: white; /*깨끗한 도화지 상태다~*/
+  mix-blend-mode:difference;
+  pointer-events:none;
+  transform:translateX(-50%) translateY(-50%);
+  transition:top .2s, left .2s, width 1s, height 1s ; /* top left 천천히 따라다님 멈춰야 따라다님, width height 크기변화에 걸리는 시간*/
+  z-index:99;
+}
+
+.need-to-cursor-big .cursor{ /*html에 .cursor-big 이 들어있는 상태이면서 .cursor가 있으면*/
+  width:50px;
+  height:50px;
+}
+
+.need-to-cursor-big .cursor-shadow{
+  width:100px;
+  height:100px;
+}
